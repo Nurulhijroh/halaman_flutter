@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'second_page.dart';
 
 class HomePage extends StatelessWidget {
     const HomePage({super.key});
@@ -13,16 +14,21 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center ,
                   children: [
-                    Text(
+                    const Text(
                         'Selamat Datang',
                     ),
                     const SizedBox(height: 10),
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Theme.of(context). primaryColor,
-                            foregroundColor: Colors.white,
+                            backgroundColor:Theme.of(context).primaryColor,
+                            foregroundColor:Colors.white,
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const SecondPage()),
+                            );
+                        },
                         child: const Text('Klik Di Sini'),
                     ),
                   ] ,
